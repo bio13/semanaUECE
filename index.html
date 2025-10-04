@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Estudos Rápidos UECE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- SEO Básico -->
+    <meta name="description" content="Revisão rápida e organizada dos principais assuntos que mais caem no vestibular da UECE. Guia compacto de 5 dias com dicas e recursos.">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:title" content="Estudos Rápidos UECE" />
+    <meta property="og:description" content="Principais assuntos que mais caem no vestibular da UECE + plano de 5 dias de revisão rápida." />
+    <meta property="og:image" content="https://www.uece.br/wp-content/uploads/2019/11/logouececentblack.png" />
+    <meta property="og:url" content="https://semanaUECE.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Estudos Rápidos UECE" />
+    <meta name="twitter:description" content="Guia de revisão em 5 dias com os assuntos mais cobrados no vestibular da UECE." />
+    <meta name="twitter:image" content="https://www.uece.br/wp-content/uploads/2019/11/logouececentblack.png" />
+
+    <!-- Cor de destaque nos navegadores móveis -->
+    <meta name="theme-color" content="#D4AF37">
+    <style>
+        :root {
+            --dourado: #D4AF37;
+            --azul-bebe: #A7C7E7;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --azul-escuro: #2C3E50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--branco);
+            color: var(--cinza-escuro);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dourado), var(--azul-bebe));
+            color: var(--branco);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid var(--dourado);
+        }
+
+        .tab-btn {
+            background-color: var(--cinza-claro);
+            border: none;
+            padding: 0.7rem 1.25rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin-right: 6px;
+        }
+
+        .tab-btn:hover {
+            background-color: var(--azul-bebe);
+            color: var(--branco);
+        }
+
+        .tab-btn.active {
+            background-color: var(--dourado);
+            color: var(--branco);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 1.5rem;
+            background-color: var(--cinza-claro);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.35s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .subject-card {
+            background-color: var(--branco);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--dourado);
+        }
+
+        .subject-card h3 {
+            color: var(--dourado);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .subject-card ul {
+            list-style-type: none;
+            margin-bottom: 0.75rem;
+        }
+
+        .subject-card li {
+            padding: 0.45rem 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .subject-card li:before {
+            content: "•";
+            color: var(--dourado);
+            font-weight: bold;
+            margin-right: 0.6rem;
+        }
+
+        .resources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--azul-bebe);
+            color: var(--azul-escuro);
+            border: none;
+            padding: 0.55rem 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .resource-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .resource-btn:hover {
+            background-color: var(--dourado);
+            color: var(--branco);
+            transform: translateY(-3px);
+        }
+
+        .day-plan {
+            background-color: var(--branco);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--azul-bebe);
+        }
+
+        .day-plan h3 {
+            color: var(--azul-escuro);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .day-plan h3 i {
+            margin-right: 0.6rem;
+            color: var(--dourado);
+        }
+
+        .day-plan ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-card {
+            background-color: var(--branco);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--dourado);
+        }
+
+        .tip-card h3 {
+            color: var(--azul-bebe);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .tip-card h3 i {
+            margin-right: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.75rem 1rem;
+            margin-top: 2rem;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .small-muted {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                border-radius: 0;
+                margin-right: 0;
+                margin-bottom: 6px;
+            }
+            
+            .resources {
+                flex-direction: column;
+            }
+            
+            .resource-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Estudos Rápidos UECE</h1>
+        <p>Os principais assuntos que mais caem no vestibular da UECE — revisão intensa de 5 dias.</p>
+    </header>
+
+    <div class="container">
+        <div class="tabs" role="tablist" aria-label="Abas de navegação">
+            <button class="tab-btn active" onclick="openTab('materias')" aria-controls="materias" role="tab" aria-selected="true">Matérias</button>
+            <button class="tab-btn" onclick="openTab('plano')" aria-controls="plano" role="tab">Plano de 5 Dias</button>
+            <button class="tab-btn" onclick="openTab('dicas')" aria-controls="dicas" role="tab">Dicas de Estudo</button>
+        </div>
+
+        <!-- MATÉRIAS -->
+        <div id="materias" class="tab-content active" role="tabpanel">
+            <div class="subject-card">
+                <h3>Português</h3>
+                <ul>
+                    <li>Interpretação de textos (predomina sobre gramática)</li>
+                    <li>Funções da linguagem</li>
+                    <li>Coesão e coerência</li>
+                    <li>Figuras de linguagem</li>
+                    <li>Concordância e regência</li>
+                    <li>Literatura brasileira: modernismo, romantismo, realismo e contemporânea</li>
+                    <li>Literatura cearense (José de Alencar, Patativa do Assaré)</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=português+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://pt.khanacademy.org/humanities/grammar" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> Khan Academy
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>Matemática</h3>
+                <ul>
+                    <li>Funções (1º e 2º grau, exponenciais e logarítmicas)</li>
+                    <li>Razão, proporção e porcentagem</li>
+                    <li>Progressões (PA e PG)</li>
+                    <li>Geometria plana e espacial (áreas, volumes, semelhança de triângulos)</li>
+                    <li>Trigonometria (Lei dos senos e cossenos, equações trigonométricas)</li>
+                    <li>Probabilidade e análise combinatória</li>
+                    <li>Matrizes, determinantes e sistemas lineares</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=matemática+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://pt.khanacademy.org/math" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> Khan Academy
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>Biologia</h3>
+                <ul>
+                    <li>Citologia (organelas, fotossíntese e respiração)</li>
+                    <li>Bioquímica (proteínas, lipídios, vitaminas)</li>
+                    <li>Genética (1ª e 2ª Lei de Mendel, heredogramas, grupos sanguíneos)</li>
+                    <li>Evolução (Darwin x Lamarck, seleção natural)</li>
+                    <li>Ecologia (relações ecológicas, ciclos biogeoquímicos, poluição)</li>
+                    <li>Fisiologia humana (sistemas: nervoso, circulatório, respiratório)</li>
+                    <li>Biotecnologia (PCR, clonagem, transgênicos)</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=biologia+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://bioenergeticacombr.blogspot.com/" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> Bioenergética
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>Física</h3>
+                <ul>
+                    <li>Leis de Newton (dinâmica e aplicações)</li>
+                    <li>Trabalho, energia e potência</li>
+                    <li>Hidrostática (Princípio de Arquimedes e Pascal)</li>
+                    <li>Termodinâmica (1ª lei, máquinas térmicas)</li>
+                    <li>Óptica (espelhos, lentes, refração/reflexão)</li>
+                    <li>Eletrodinâmica (Lei de Ohm, associações de resistores, Lei de Kirchhoff)</li>
+                    <li>Magnetismo e indução</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=física+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://www.fisica.net/" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> Física.net
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>Química</h3>
+                <ul>
+                    <li>Ligações químicas (iônica, covalente, metálica)</li>
+                    <li>Geometria molecular e polaridade</li>
+                    <li>Funções inorgânicas (ácidos, bases, sais, óxidos)</li>
+                    <li>Estequiometria</li>
+                    <li>Soluções (concentração, diluição, propriedades coligativas)</li>
+                    <li>Termoquímica (Lei de Hess, entalpia)</li>
+                    <li>Equilíbrio químico (Le Chatelier, pH)</li>
+                    <li>Eletroquímica (pilhas, eletrólise)</li>
+                    <li>Orgânica: hidrocarbonetos, funções oxigenadas e nitrogenadas, isomeria</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=química+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://www.tabelaperiodicacompleta.com/" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> Tabela Periódica
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>História</h3>
+                <ul>
+                    <li>Brasil Colônia: economia açucareira, mineração, movimentos nativistas</li>
+                    <li>Brasil Império: independência, 2º reinado, abolição</li>
+                    <li>Brasil República: Era Vargas, ditadura militar, redemocratização</li>
+                    <li>História do Ceará (Padre Cícero, movimentos sociais, abolição precoce)</li>
+                    <li>História Geral: Feudalismo, Iluminismo, Revolução Francesa, Revolução Industrial</li>
+                    <li>Contemporânea: 1ª e 2ª Guerra Mundial, Guerra Fria, globalização</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=história+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://historiadomundo.com.br/" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> História do Mundo
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>Geografia</h3>
+                <ul>
+                    <li>Geografia física: clima, relevo, vegetação, hidrografia</li>
+                    <li>Meio ambiente: desmatamento, mudanças climáticas</li>
+                    <li>População: urbanização, migração, crescimento demográfico</li>
+                    <li>Geografia econômica do Brasil: agropecuária, industrialização, energia</li>
+                    <li>Geopolítica mundial: globalização, blocos econômicos</li>
+                    <li>Geografia do Ceará: ocupação, urbanização, regiões metropolitanas</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=geografia+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://www.ibge.gov.br/" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> IBGE
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>Filosofia e Sociologia</h3>
+                <ul>
+                    <li>Filosofia: Sócrates, Platão, Aristóteles, Iluminismo, Marx, Nietzsche</li>
+                    <li>Sociologia: surgimento da sociologia, trabalho, globalização, movimentos sociais</li>
+                    <li>Temas transversais: gênero, etnia, direitos humanos</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=filosofia+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://plato.stanford.edu/" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> Stanford Encyclopedia
+                    </a>
+                </div>
+            </div>
+
+            <div class="subject-card">
+                <h3>Educação Física</h3>
+                <ul>
+                    <li>Atividade física e saúde (sedentarismo, doenças hipocinéticas)</li>
+                    <li>Aptidão física: resistência, força, flexibilidade, composição corporal</li>
+                    <li>Esportes coletivos e ginásticas (contexto social e histórico)</li>
+                    <li>Corpo, mídia e padrões de beleza; práticas corporais no Ceará</li>
+                </ul>
+                <div class="resources">
+                    <a href="https://www.youtube.com/results?search_query=educação+física+UECE" target="_blank" class="resource-btn">
+                        <i class="fab fa-youtube"></i> Vídeos no YouTube
+                    </a>
+                    <a href="https://bvsms.saude.gov.br/" target="_blank" class="resource-btn">
+                        <i class="fas fa-external-link-alt"></i> Biblioteca Saúde (referências)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLANO -->
+        <div id="plano" class="tab-content" role="tabpanel">
+            <div class="day-plan">
+                <h3><i class="fas fa-sun"></i> Dia 1 — Linguagens & Humanas</h3>
+                <ul>
+                    <li>Manhã: Português — interpretação (foco em trechos longos e inferências) + figuras de linguagem (30–40 min)</li>
+                    <li>Tarde: Literatura (Modernismo + autores cearenses) + Filosofia (resumos de filósofos clássicos) (2 blocos de 45 min)</li>
+                    <li>Noite: Educação Física (saúde e aptidão) + leitura leve (30 min)</li>
+                </ul>
+            </div>
+
+            <div class="day-plan">
+                <h3><i class="fas fa-calculator"></i> Dia 2 — Matemática I</h3>
+                <ul>
+                    <li>Manhã: Funções (quadráticas e exponenciais) — teoria + 5 exercícios (90 min)</li>
+                    <li>Tarde: PA/PG, razão e porcentagem + probabilidades rápidas (60–75 min)</li>
+                    <li>Noite: Revisão rápida com questões anteriores (45 min)</li>
+                </ul>
+            </div>
+
+            <div class="day-plan">
+                <h3><i class="fas fa-dna"></i> Dia 3 — Biologia (Intensivo)</h3>
+                <ul>
+                    <li>Manhã: Citologia + bioquímica (leitura + esquemas) (60–75 min)</li>
+                    <li>Tarde: Genética (Mendel, heredogramas, exercícios) (60 min)</li>
+                    <li>Noite: Ecologia + evolução (mapas mentais e questões) (45 min)</li>
+                </ul>
+            </div>
+
+            <div class="day-plan">
+                <h3><i class="fas fa-atom"></i> Dia 4 — Física & Química</h3>
+                <ul>
+                    <li>Manhã: Física — Leis de Newton, trabalho e energia (resolução de 5 exercícios) (90 min)</li>
+                    <li>Tarde: Hidrostática + óptica (resumos e questões) (60 min)</li>
+                    <li>Noite: Química — ligações + estequiometria (prática de cálculos) (60 min)</li>
+                </ul>
+            </div>
+
+            <div class="day-plan">
+                <h3><i class="fas fa-globe"></i> Dia 5 — Matemática II + Humanas</h3>
+                <ul>
+                    <li>Manhã: Geometria (plana e espacial) + trigonometria (90 min)</li>
+                    <li>Tarde: História (Colônia, Império, República) + Geografia (meio ambiente e Ceará) (90 min)</li>
+                    <li>Noite: Revisão geral integrada — questões mistas e checklist de "campeões" (60 min)</li>
+                </ul>
+            </div>
+
+            <div class="tip-card">
+                <h3><i class="fas fa-clock"></i> Observações práticas</h3>
+                <ul>
+                    <li>Use ciclos Pomodoro: 50 min de estudo / 10 min de descanso — ou 25/5 se preferir.</li>
+                    <li>Priorize exercícios com correção comentada no último dia.</li>
+                    <li>Na véspera: revisões curtas, sono de qualidade e alimentação leve.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DICAS -->
+        <div id="dicas" class="tab-content" role="tabpanel">
+            <div class="tip-card">
+                <h3><i class="fas fa-lightbulb"></i> Dicas Rápidas</h3>
+                <ul>
+                    <li>Foque nos "campeões" — revisar intensamente os tópicos que mais caem.</li>
+                    <li>Faça questões de provas passadas da UECE (tempo cronometrado).</li>
+                    <li>Crie mapas mentais para Biologia, História e Geografia — eles fixam melhor.</li>
+                    <li>Emparelhe estudos: depois de 1h de teoria, resolva 20 minutos de questões.</li>
+                    <li>Evite tentar aprender assuntos novos demais — priorize fixação e resolução.</li>
+                </ul>
+            </div>
+
+            <div class="tip-card">
+                <h3><i class="fas fa-apple-alt"></i> Saúde & Preparação</h3>
+                <ul>
+                    <li>Durma 7–8 horas; hidratação e refeições leves ajudam na concentração.</li>
+                    <li>Pequenas pausas ativas (5–10 min) aumentam o rendimento.</li>
+                    <li>Leve um breve resumo (1 página) por matéria para a revisão final.</li>
+                </ul>
+            </div>
+
+            <div class="tip-card">
+                <h3><i class="fas fa-clipboard-check"></i> Checklist antes da prova</h3>
+                <ul>
+                    <li>Documentos, caneta azul/preta, cartão de confirmação e itens permitidos.</li>
+                    <li>Revise apenas resumos e exercícios-chave — nada de conteúdo novo.</li>
+                    <li>Respire fundo, confie no seu preparo e siga a estratégia de prova (leia antes as questões fáceis).</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div><strong>Estudos Rápidos UECE</strong></div>
+        <div class="small-muted">Feito pra revisão intensa — boa prova, campeão(a) 🌿</div>
+    </footer>
+
+    <script>
+        // Controle simples de abas
+        function openTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('onclick')?.includes(tabId));
+                // Update aria-selected for accessibility
+                const controls = btn.getAttribute('onclick')?.match(/openTab\('(.+)'\)/);
+                if (controls && controls[1] === tabId) {
+                    btn.setAttribute('aria-selected', 'true');
+                } else {
+                    btn.setAttribute('aria-selected', 'false');
+                }
+            });
+
+            contents.forEach(c => {
+                if (c.id === tabId) {
+                    c.classList.add('active');
+                } else {
+                    c.classList.remove('active');
+                }
+            });
+
+            // For smaller screens, scroll to top of content
+            const activeContent = document.getElementById(tabId);
+            if (activeContent) {
+                activeContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Ensure initial ARIA states are correct
+        (function initAria() {
+            document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+                btn.setAttribute('role', 'tab');
+                btn.setAttribute('tabindex', i === 0 ? '0' : '-1');
+            });
+            document.querySelectorAll('.tab-content').forEach((c, i) => {
+                c.setAttribute('role', 'tabpanel');
+            });
+        })();
+
+        // Optional: keyboard navigation (Left/Right to move between tabs)
+        document.addEventListener('keydown', function(e) {
+            const activeBtn = document.querySelector('.tab-btn.active');
+            if (!activeBtn) return;
+            let all = Array.from(document.querySelectorAll('.tab-btn'));
+            let idx = all.indexOf(activeBtn);
+            if (e.key === 'ArrowRight') {
+                let next = all[(idx + 1) % all.length];
+                next.click();
+                next.focus();
+            } else if (e.key === 'ArrowLeft') {
+                let prev = all[(idx - 1 + all.length) % all.length];
+                prev.click();
+                prev.focus();
+            }
+        });
+    </script>
+</body>
+</html>
